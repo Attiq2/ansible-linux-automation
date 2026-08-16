@@ -1,0 +1,19 @@
+# SSH private keys
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+
+# Ansible temporary files
+*.retry
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.*
+
+# OS files
+.DS_Store

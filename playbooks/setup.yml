@@ -1,0 +1,7 @@
+---
+- name: Configure Linux Web Servers
+  hosts: web
+  become: true
+
+  roles:
+    - nginx

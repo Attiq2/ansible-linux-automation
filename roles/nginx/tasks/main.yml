@@ -1,0 +1,18 @@
+---
+- name: Install Nginx
+  apt:
+    name: "{{ nginx_package }}"
+    state: present
+    update_cache: true
+
+- name: Ensure Nginx is running
+  service:
+    name: "{{ nginx_service }}"
+    state: started
+    enabled: true
+
+- name: Deploy custom web page
+  template:
+    src: index.html.j2
+    dest: "{{ nginx_web_root }}/index.html"
+  notify: Restart Nginx

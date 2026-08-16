@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ company_name }}</title>
+</head>
+<body>
+    <h1>Hello from {{ ansible_hostname }}</h1>
+
+    <p>Environment: {{ server_environment }}</p>
+
+    <p>Web Server Port: {{ web_port }}</p>
+
+    <p>This server was configured using Ansible.</p>
+</body>
+</html>

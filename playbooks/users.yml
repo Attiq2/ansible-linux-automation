@@ -1,0 +1,27 @@
+---
+- name: Manage Users on Linux Servers
+  hosts: web
+  become: true
+
+  vars:
+    users:
+      - devops
+      - developer
+
+  tasks:
+
+    - name: Create users
+      user:
+        name: "{{ item }}"
+        state: present
+        shell: /bin/bash
+        create_home: true
+      loop: "{{ users }}"
+
+    - name: Add users to sudo group
+      user:
+        name: "{{ item }}"
+        groups: sudo
+        append: true
+      loop: "{{ users }}"
+

@@ -1,0 +1,16 @@
+---
+- name: Display Server Information
+  hosts: web
+  gather_facts: true
+
+  tasks:
+
+    - name: Display server information
+      debug:
+        msg:
+          - "Hostname: {{ ansible_hostname }}"
+          - "OS: {{ ansible_distribution }} {{ ansible_distribution_version }}"
+          - "OS Family: {{ ansible_os_family }}"
+          - "CPU Cores: {{ ansible_processor_vcpus }}"
+          - "Memory: {{ ansible_memtotal_mb }} MB"
+          - "Private IP: {{ ansible_default_ipv4.address }}"

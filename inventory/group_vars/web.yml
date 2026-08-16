@@ -1,0 +1,4 @@
+---
+server_environment: production
+web_port: 80
+company_name: DevOps Automation
